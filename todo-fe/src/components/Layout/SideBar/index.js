@@ -9,7 +9,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './SideBar.css';
-import ListItem from '~/components/ListItem';
+import list-item from '~/components/list-item';
 import StoryProfile from '~/components/StoryProfile';
 
 const cx = classNames.bind(styles);
@@ -268,30 +268,30 @@ function SideBar() {
                     </div>
                 </div>
                 <div className={cx('side2')}>
-                    <div className={cx('listItem-wrapper')}>
-                        <ListItem info={storyinfo} header={'Thịnh hành tuần'}></ListItem>
+                    <div className={cx('list-item-wrapper')}>
+                        <list-item info={storyinfo} header={'Thịnh hành tuần'}></list-item>
                     </div>
-                    <div className={cx('listItem-wrapper')}>
-                        <ListItem info={storyinfo} header={'Đọc nhiều tuần'}></ListItem>
+                    <div className={cx('list-item-wrapper')}>
+                        <list-item info={storyinfo} header={'Đọc nhiều tuần'}></list-item>
                     </div>
-                    <div className={cx('listItem-wrapper')}>
-                        <ListItem info={storyinfo} header={'Đề cử tuần'}></ListItem>
+                    <div className={cx('list-item-wrapper')}>
+                        <list-item info={storyinfo} header={'Đề cử tuần'}></list-item>
                     </div>
                 </div>
                 <div className={cx('side3')}>
-                    <div className={cx('listItem-wrapper')}>
-                        <ListItem info={storyinfo} header={'Đánh giá cao'}></ListItem>
+                    <div className={cx('list-item-wrapper')}>
+                        <list-item info={storyinfo} header={'Đánh giá cao'}></list-item>
                     </div>
-                    <div className={cx('listItem-wrapper')}>
-                        <ListItem info={storyinfo} header={'Truyện mới đăng'}></ListItem>
+                    <div className={cx('list-item-wrapper')}>
+                        <list-item info={storyinfo} header={'Truyện mới đăng'}></list-item>
                     </div>
-                    <div className={cx('listItem-wrapper')}>
-                        <ListItem info={storyinfo} header={'Truyện mới hoàn thành'}></ListItem>
+                    <div className={cx('list-item-wrapper')}>
+                        <list-item info={storyinfo} header={'Truyện mới hoàn thành'}></list-item>
                     </div>
                 </div>
                 <div className={cx('side4')}>
-                    <div className={cx('listItem-wrapper')}>
-                        <ListItem info={storyinfo} header={'Truyện đọc nhiều nhất'}></ListItem>
+                    <div className={cx('list-item-wrapper')}>
+                        <list-item info={storyinfo} header={'Truyện đọc nhiều nhất'}></list-item>
                     </div>
                     <div className={cx('profile-wrapper')}>
                         <StoryProfile info={storyinfo} header={'Lựa chọn của Biên Tập Viên'}></StoryProfile>

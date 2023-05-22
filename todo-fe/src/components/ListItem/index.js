@@ -1,25 +1,25 @@
 import classNames from 'classnames/bind';
-import styles from './listItem.module.scss';
-import Iconnumber from './IconNumber';
+import styles from './list-item.module.scss';
+import IconNumber from './IconNumber';
 import { BookCover } from 'book-cover-3d';
 
 const cx = classNames.bind(styles);
-function ListItem({ children, className, info, header }) {
+function list-item({ children, className, info, header }) {
     const Firstitem = info[0];
-    const Otheritem = info.slice(1);
-    const renderListItem = Otheritem.map((item, index) => {
+    const other-item = info.slice(1);
+    const renderListItem = other-item.map((item, index) => {
         return (
-            <div key={index} className={cx('otheritem')}>
-                <div className={cx('iconother')}>
-                    <Iconnumber num={item.code}>{item.code}</Iconnumber>
+            <div key={index} className={cx('other-item')}>
+                <div className={cx('icon-other')}>
+                    <IconNumber num={item.code}>{item.code}</IconNumber>
                 </div>
-                <div className={cx('infoother')}>
-                    <a href={item.href} className={cx('nameother')}>
+                <div className={cx('info-other')}>
+                    <a href={item.href} className={cx('name-other')}>
                         {item.storyname}
                     </a>
                 </div>
-                <div className={cx('chapterother')}>
-                    <p className={cx('chapterotheritem')}>{item.chapternumber} chương</p>
+                <div className={cx('chapter-other')}>
+                    <p className={cx('chapter-other-item')}>{item.chapternumber} chương</p>
                 </div>
             </div>
         );
@@ -32,10 +32,10 @@ function ListItem({ children, className, info, header }) {
                     Xem tất cả
                 </a>
             </div>
-            <div className={cx('listitem')}>
+            <div className={cx('list-item')}>
                 <div className={cx('item1')}>
                     <div className={cx('icon1')}>
-                        <Iconnumber num={1}>{'1'}</Iconnumber>
+                        <IconNumber num={1}>{'1'}</IconNumber>
                     </div>
                     <div className={cx('info1')}>
                         <a href={Firstitem.href} className={cx('name')}>
@@ -60,10 +60,10 @@ function ListItem({ children, className, info, header }) {
                         </a>
                     </div>
                 </div>
-                <div className={cx('otheritemwrapper')}>{renderListItem}</div>
+                <div className={cx('other-itemwrapper')}>{renderListItem}</div>
             </div>
         </div>
     );
 }
 
-export default ListItem;
+export default list-item;

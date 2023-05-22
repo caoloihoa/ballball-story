@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
-import styles from './listItem.module.scss';
+import styles from './list-item.module.scss';
 import { MedalIcon } from '~/components/Icon';
 
 const cx = classNames.bind(styles);
-function Iconnumber({ children, className, num }) {
+function IconNumber({ children, className, num }) {
     let currentColorItem = '';
     let render = true;
     switch (num) {
@@ -24,7 +24,7 @@ function Iconnumber({ children, className, num }) {
     }
 
     return (
-        <div className={cx('wrapper-iconnumber')}>
+        <div className={cx('wrapper-IconNumber')}>
             {render && (
                 <span className={cx('iconsvg')}>
                     <MedalIcon currentColor={currentColorItem} />
@@ -35,4 +35,4 @@ function Iconnumber({ children, className, num }) {
     );
 }
 
-export default Iconnumber;
+export default IconNumber;

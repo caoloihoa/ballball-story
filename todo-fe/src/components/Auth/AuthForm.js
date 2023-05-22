@@ -1,19 +1,19 @@
-import "./styles.css";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login, register } from "../../redux/userSlice";
+import './styles.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login, register } from '../../redux/userSlice';
 
 const AuthForm = ({ isLoginPage = true }) => {
     const userProfile = {
-        username: "",
-        password: "",
-        confirmPassword: "",
-        email: "",
+        username: '',
+        password: '',
+        confirmPassword: '',
+        email: '',
     };
     const userProfileError = {
-        usernameError: "",
-        passwordError: "",
+        usernameError: '',
+        passwordError: '',
     };
     const [profileData, setProfileData] = useState(userProfile);
     const [profileDataError, setProfileDataError] = useState(userProfileError);
@@ -37,7 +37,7 @@ const AuthForm = ({ isLoginPage = true }) => {
         if (username.length < 6 || username.length > 30) {
             setProfileDataError({
                 ...profileDataError,
-                usernameError: "Tên đăng nhập ngắn ngắn thôi",
+                usernameError: 'Tên đăng nhập quá dài',
             });
             return;
         }
@@ -45,7 +45,7 @@ const AuthForm = ({ isLoginPage = true }) => {
         if (password.length < 6 || password.length > 30) {
             setProfileDataError({
                 ...profileDataError,
-                passwordError: "Mật khẩu bạn eiiii!",
+                passwordError: 'Mật khẩu',
             });
             return;
         }
@@ -53,7 +53,7 @@ const AuthForm = ({ isLoginPage = true }) => {
         if (password !== confirmPassword && !isLoginPage) {
             setProfileDataError({
                 ...profileDataError,
-                passwordError: "Bị ngáo à!",
+                passwordError: 'Lỗi mật khẩu',
             });
             return;
         }
@@ -65,7 +65,7 @@ const AuthForm = ({ isLoginPage = true }) => {
                     username,
                     password,
                     rememberMe,
-                })
+                }),
             );
         } else {
             dispatch(
@@ -74,7 +74,7 @@ const AuthForm = ({ isLoginPage = true }) => {
                     email,
                     rememberMe,
                     password,
-                })
+                }),
             );
         }
     };
@@ -82,15 +82,10 @@ const AuthForm = ({ isLoginPage = true }) => {
     return (
         <div className="auth-container">
             <form onSubmit={onSubmit} className="auth-form">
-                <h2>{isLoginPage ? "Đăng nhập" : "Đăng ký"}</h2>
+                <h2>{isLoginPage ? 'Đăng nhập' : 'Đăng ký'}</h2>
                 <div className="input-wrapper">
                     <span>Tên đăng nhập:</span>
-                    <input
-                        className="todo-input"
-                        value={username}
-                        onChange={handleChange}
-                        name="username"
-                    />
+                    <input className="todo-input" value={username} onChange={handleChange} name="username" />
                     <p className="error-text">{usernameError}</p>
                 </div>
                 <div className="input-wrapper">
@@ -132,7 +127,7 @@ const AuthForm = ({ isLoginPage = true }) => {
                 )}
                 <div className="btn-wrapper">
                     <div className="remember-me">
-                        <p>Nhớ tao không?</p>
+                        <p>Nhớ mật khẩu?</p>
                         <input
                             value={rememberMe}
                             type="checkbox"
@@ -141,7 +136,7 @@ const AuthForm = ({ isLoginPage = true }) => {
                         />
                     </div>
                     <button type="submit" className="todo-btn primary">
-                        {isLoginPage ? "Đăng nhập" : "Đăng ký"}
+                        {isLoginPage ? 'Đăng nhập' : 'Đăng ký'}
                     </button>
                 </div>
                 <p>
