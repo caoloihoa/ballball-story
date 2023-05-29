@@ -80,7 +80,7 @@ const authCtrl = {
             // validate data
             if (!username || !password) {
                 return res.status(401).json({
-                    message: "Fuck you",
+                    message: "error",
                 });
             }
 

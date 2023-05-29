@@ -8,7 +8,7 @@ const todoCtrl = {
 
             if (!name || !content || !status) {
                 return res.status(401).json({
-                    message: "Fuck you",
+                    message: "Error",
                 });
             }
 
@@ -38,7 +38,7 @@ const todoCtrl = {
 
             if (!name || !content || !status || !id) {
                 return res.status(403).json({
-                    message: "Chua nhap cai gi kia",
+                    message: "error write",
                 });
             }
 
@@ -70,7 +70,7 @@ const todoCtrl = {
 
             if (!id) {
                 return res.status(403).json({
-                    message: "Chua nhap cai gi kia",
+                    message: "no write",
                 });
             }
 
