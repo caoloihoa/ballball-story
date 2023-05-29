@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './list-item.module.scss';
+import styles from './listItem.module.scss';
 import { MedalIcon } from '~/components/Icon';
 
 const cx = classNames.bind(styles);

@@ -1,15 +1,15 @@
 import classNames from 'classnames/bind';
-import styles from './list-item.module.scss';
+import styles from './listItem.module.scss';
 import IconNumber from './IconNumber';
 import { BookCover } from 'book-cover-3d';
 
 const cx = classNames.bind(styles);
-function list-item({ children, className, info, header }) {
+function ListItem({ children, className, info, header }) {
     const Firstitem = info[0];
-    const other-item = info.slice(1);
-    const renderListItem = other-item.map((item, index) => {
+    const otherItem = info.slice(1);
+    const renderListItem = otherItem.map((item, index) => {
         return (
-            <div key={index} className={cx('other-item')}>
+            <div key={index} className={cx('otherItem')}>
                 <div className={cx('icon-other')}>
                     <IconNumber num={item.code}>{item.code}</IconNumber>
                 </div>
@@ -19,7 +19,7 @@ function list-item({ children, className, info, header }) {
                     </a>
                 </div>
                 <div className={cx('chapter-other')}>
-                    <p className={cx('chapter-other-item')}>{item.chapternumber} chương</p>
+                    <p className={cx('chapter-otherItem')}>{item.chapternumber} chương</p>
                 </div>
             </div>
         );
@@ -32,7 +32,7 @@ function list-item({ children, className, info, header }) {
                     Xem tất cả
                 </a>
             </div>
-            <div className={cx('list-item')}>
+            <div className={cx('ListItem')}>
                 <div className={cx('item1')}>
                     <div className={cx('icon1')}>
                         <IconNumber num={1}>{'1'}</IconNumber>
@@ -60,10 +60,10 @@ function list-item({ children, className, info, header }) {
                         </a>
                     </div>
                 </div>
-                <div className={cx('other-itemwrapper')}>{renderListItem}</div>
+                <div className={cx('otherItemwrapper')}>{renderListItem}</div>
             </div>
         </div>
     );
 }
 
-export default list-item;
+export default ListItem;

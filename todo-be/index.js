@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-const APP_PORT = parseInt(process.env.PORT) || 5000;
+const APP_PORT = parseInt(process.env.PORT) || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
 app.get("/health", function (req, res) {

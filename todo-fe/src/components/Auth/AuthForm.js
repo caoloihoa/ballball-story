@@ -37,7 +37,7 @@ const AuthForm = ({ isLoginPage = true }) => {
         if (username.length < 6 || username.length > 30) {
             setProfileDataError({
                 ...profileDataError,
-                usernameError: 'Tên đăng nhập quá dài',
+                usernameError: 'Tên đăng nhập không hợp lệ',
             });
             return;
         }
@@ -139,11 +139,13 @@ const AuthForm = ({ isLoginPage = true }) => {
                         {isLoginPage ? 'Đăng nhập' : 'Đăng ký'}
                     </button>
                 </div>
-                <p>
+                <p className="linkWrapper">
                     {isLoginPage ? (
                         <span>
                             Bạn chưa có tài khoản?
-                            <Link to="/register">đăng ký</Link>
+                            <Link to="/register" className="link">
+                                đăng ký
+                            </Link>
                         </span>
                     ) : (
                         <span>

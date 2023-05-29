@@ -1,10 +1,10 @@
-import axios from "axios";
-import jwt_decode from "jwt-decode";
-import dayjs from "dayjs";
-import { useContext } from "react";
-import AuthContext from "../context/AuthContext";
+import axios from 'axios';
+import jwt_decode from 'jwt-decode';
+import dayjs from 'dayjs';
+import { useContext } from 'react';
+import AuthContext from '../context/AuthContext';
 
-const baseURL = "http://127.0.0.1:8000";
+const baseURL = 'http://192.168.2.101:3000';
 
 const useAxios = () => {
     const { authTokens, setUser, setAuthTokens } = useContext(AuthContext);
@@ -24,7 +24,7 @@ const useAxios = () => {
             refresh: authTokens.refresh,
         });
 
-        localStorage.setItem("authTokens", JSON.stringify(response.data));
+        localStorage.setItem('authTokens', JSON.stringify(response.data));
 
         setAuthTokens(response.data);
         setUser(jwt_decode(response.data.access));
